@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Layout</title>
+
+
+    <style>
+        .grid-layout {
+            display: grid;
+            grid-template-columns: 1fr 2fr 1fr;
+            grid-template-rows: auto auto auto;
+            gap: 15px;
+            background-color: #1717e8;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        
+        .header { grid-column: 1 / 4; background-color: #5088ea; color: white; }
+        .sidebar { grid-row: 2 / 4; background-color: #4f55d2; color: white; }
+        .main-content { background-color: #34375a; color: white; }
+        .aside { background-color: #fd79a8; color: white; }
+        .footer { grid-column: 2 / 4; background-color: #01045f; color: white; }
+        
+        .layout-item {
+            padding: 20px;
+            text-align: center;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+            <h3>Latihan 4: Complete Website Layout By "Siti Faujiah"</h3>
+        <div class="grid-layout">
+            <div class="header layout-item">Header</div>
+            <div class="sidebar layout-item">Sidebar</div>
+            <div class="main-content layout-item">Main Content</div>
+            <div class="aside layout-item">Aside</div>
+            <div class="footer layout-item">Footer</div>
+        </div>
+</body>
+</html>
