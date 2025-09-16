@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Box Model, Flexbox & Grid Complete Project</title>
+    
+    <style>
+        /* General Styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f5f5f5;
+        }
+        
+        h1, h2 {
+            color: #333;
+            text-align: center;
+            margin: 30px 0 20px 0;
+        }
+        
+        .section {
+            margin: 40px 0;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        /* CSS Box Model Styles */
+        .box-model {  
+            width: 300px;
+            border: 25px solid green;
+            padding: 25px;
+            margin: 25px auto;
+            background-color: #fff;
+            text-align: justify;
+        }
+        
+        /* CSS Flexbox Styles */
+        .flex-container {
+            display: flex;
+            background-color: DodgerBlue;
+            margin: 20px 0;
+        }
+        
+        .flex-container > div {
+            background-color: #f1f1f1;
+            margin: 10px;
+            padding: 20px;
+            font-size: 30px;
+            text-align: center;
+        }
+        
+        /* Flexbox Properties Examples */
+        .flex-row {
+            display: flex;
+            flex-direction: row;
+            background-color: #ff6b6b;
+            margin: 10px 0;
+        }
+        
+        .flex-column {
+            display: flex;
+            flex-direction: column;
+            background-color: #4ecdc4;
+            margin: 10px 0;
+            height: 200px;
+        }
+        
+        .flex-wrap {
+            display: flex;
+            flex-wrap: wrap;
+            background-color: #45b7d1;
+            width: 300px;
+            margin: 10px 0;
+        }
+        
+        .flex-wrap > div {
+            width: 100px;
+            background-color: #96ceb4;
+            margin: 5px;
+            padding: 10px;
+            text-align: center;
+        }
+        
+        .flex-justify-center {
+            display: flex;
+            justify-content: center;
+            background-color: #feca57;
+            margin: 10px 0;
+        }
+        
+        .flex-justify-space-between {
+            display: flex;
+            justify-content: space-between;
+            background-color: #ff9ff3;
+            margin: 10px 0;
+        }
+        
+        .flex-justify-space-around {
+            display: flex;
+            justify-content: space-around;
+            background-color: #54a0ff;
+            margin: 10px 0;
+        }
+        
+        /* Photo Gallery with Flexbox */
+        .photo-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+            background-color: #ddd;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        
+        .photo-item {
+            width: 150px;
+            height: 150px;
+            background: linear-gradient(45deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            border-radius: 8px;
+        }
+        
+        /* CSS Grid Styles */
+        .grid-container {
+            display: grid;
+            grid-template-columns: auto auto auto;
+            background-color: #2196F3;
+            padding: 10px;
+            gap: 10px;
+            margin: 20px 0;
+        }
+        
+        .grid-item {
+            background-color: rgba(255, 255, 255, 0.8);
+            border: 1px solid rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            font-size: 30px;
+            text-align: center;
+        }
+        
+        /* Grid with Column Gap */
+        .grid-column-gap {
+            display: grid;
+            grid-template-columns: auto auto auto;
+            grid-column-gap: 50px;
+            background-color: #ff6b6b;
+            padding: 10px;
+            margin: 20px 0;
+        }
+        
+        /* Grid with Different Column Widths */
+        .grid-different-widths {
+            display: grid;
+            grid-template-columns: 80px 200px auto 30px;
+            background-color: #4ecdc4;
+            padding: 10px;
+            margin: 20px 0;
+        }
+        
+        /* Grid with Spanning Items */
+        .grid-span-container {
+            display: grid;
+            grid-template-columns: auto auto auto auto;
+            background-color: #feca57;
+            padding: 10px;
+            gap: 10px;
+            margin: 20px 0;
+        }
+        
+        .item1 {
+            grid-column: 1 / 5;
+            background-color: #ff9ff3;
+        }
+        
+        .item2 {
+            grid-row: 1 / 4;
+            background-color: #54a0ff;
+        }
+        
+        /* Grid Layout Example */
+        .grid-layout {
+            display: grid;
+            grid-template-columns: 1fr 2fr 1fr;
+            grid-template-rows: auto auto auto;
+            gap: 15px;
+            background-color: #e17055;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        
+        .header { grid-column: 1 / 4; background-color: #2d3436; color: white; }
+        .sidebar { grid-row: 2 / 4; background-color: #636e72; color: white; }
+        .main-content { background-color: #74b9ff; color: white; }
+        .aside { background-color: #fd79a8; color: white; }
+        .footer { grid-column: 2 / 4; background-color: #00b894; color: white; }
+        
+        .layout-item {
+            padding: 20px;
+            text-align: center;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Complete CSS Box Model, Flexbox & Grid Project</h1>
+    
+    <!-- CSS Box Model Section -->
+    <div class="section">
+        <h2>1. CSS Box Model</h2>
+        <div class="box-model">
+            This text is the actual content of the box. We
+            have added a 25px padding, 25px margin and a 25px
+            green border. The CSS Box Model consists of margins, borders, padding, and the actual content.
+        </div>
+    </div>
+    
+    <!-- CSS Flexbox Section -->
+    <div class="section">
+        <h2>2. CSS Flexbox</h2>
+        
+        <h3>Basic Flexbox</h3>
+        <div class="flex-container">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+        </div>
+        
+        <h3>Flex Direction: Row</h3>
+        <div class="flex-row">
+            <div style="background-color: #f1f1f1; margin: 10px; padding: 20px;">A</div>
+            <div style="background-color: #f1f1f1; margin: 10px; padding: 20px;">B</div>
+            <div style="background-color: #f1f1f1; margin: 10px; padding: 20px;">C</div>
+        </div>
+        
+        <h3>Flex Direction: Column</h3>
+        <div class="flex-column">
+            <div style="background-color: #f1f1f1; margin: 10px; padding: 20px;">1</div>
+            <div style="background-color: #f1f1f1; margin: 10px; padding: 20px;">2</div>
+            <div style="background-color: #f1f1f1; margin: 10px; padding: 20px;">3</div>
+        </div>
+        
+        <h3>Flex Wrap</h3>
+        <div class="flex-wrap">
+            <div>Item 1</div>
+            <div>Item 2</div>
+            <div>Item 3</div>
+            <div>Item 4</div>
+            <div>Item 5</div>
+        </div>
+        
+        <h3>Justify Content: Center</h3>
+        <div class="flex-justify-center">
+            <div style="background-color: #f1f1f1; margin: 10px; padding: 20px;">Center</div>
+        </div>
+        
+        <h3>Justify Content: Space Between</h3>
+        <div class="flex-justify-space-between">
+            <div style="background-color: #f1f1f1; padding: 20px;">Start</div>
+            <div style="background-color: #f1f1f1; padding: 20px;">Middle</div>
+            <div style="background-color: #f1f1f1; padding: 20px;">End</div>
+        </div>
+        
+        <h3>Justify Content: Space Around</h3>
+        <div class="flex-justify-space-around">
+            <div style="background-color: #f1f1f1; padding: 20px;">1</div>
+            <div style="background-color: #f1f1f1; padding: 20px;">2</div>
+            <div style="background-color: #f1f1f1; padding: 20px;">3</div>
+        </div>
+        
+        <h3>Latihan 3: Photo Gallery (3x3 Grid dengan Flexbox)</h3>
+        <div class="photo-gallery">
+            <div class="photo-item">Photo 1</div>
+            <div class="photo-item">Photo 2</div>
+            <div class="photo-item">Photo 3</div>
+            <div class="photo-item">Photo 4</div>
+            <div class="photo-item">Photo 5</div>
+            <div class="photo-item">Photo 6</div>
+            <div class="photo-item">Photo 7</div>
+            <div class="photo-item">Photo 8</div>
+            <div class="photo-item">Photo 9</div>
+        </div>
+    </div>
+    
+    <!-- CSS Grid Section -->
+    <div class="section">
+        <h2>3. CSS Grid</h2>
+        
+        <h3>Basic Grid (3 Columns)</h3>
+        <div class="grid-container">
+            <div class="grid-item">1</div>
+            <div class="grid-item">2</div>
+            <div class="grid-item">3</div>
+            <div class="grid-item">4</div>
+            <div class="grid-item">5</div>
+            <div class="grid-item">6</div>
+            <div class="grid-item">7</div>
+            <div class="grid-item">8</div>
+            <div class="grid-item">9</div>
+        </div>
+        
+        <h3>Grid with Column Gap (50px)</h3>
+        <div class="grid-column-gap">
+            <div class="grid-item">1</div>
+            <div class="grid-item">2</div>
+            <div class="grid-item">3</div>
+            <div class="grid-item">4</div>
+            <div class="grid-item">5</div>
+            <div class="grid-item">6</div>
+        </div>
+        
+        <h3>Grid with Different Column Widths (80px, 200px, auto, 30px)</h3>
+        <div class="grid-different-widths">
+            <div class="grid-item">80px</div>
+            <div class="grid-item">200px</div>
+            <div class="grid-item">Auto</div>
+            <div class="grid-item">30px</div>
+        </div>
+        
+        <h3>Grid with Spanning Items</h3>
+        <div class="grid-span-container">
+            <div class="grid-item item1">Item 1 (Spans 4 columns)</div>
+            <div class="grid-item">2</div>
+            <div class="grid-item">3</div>
+            <div class="grid-item item2">4 (Spans 3 rows)</div>
+            <div class="grid-item">5</div>
+            <div class="grid-item">6</div>
+            <div class="grid-item">7</div>
+            <div class="grid-item">8</div>
+        </div>
+        
+        <h3>Latihan 4: Complete Website Layout</h3>
+        <div class="grid-layout">
+            <div class="header layout-item">Header</div>
+            <div class="sidebar layout-item">Sidebar</div>
+            <div class="main-content layout-item">Main Content</div>
+            <div class="aside layout-item">Aside</div>
+            <div class="footer layout-item">Footer</div>
+        </div>
+    </div>
+    
+    <div style="text-align: center; margin-top: 40px; padding: 20px; background-color: #2d3436; color: white;">
+        <h3>By Siti Faujiah (43230163)</h3>
+    </div>
+</body>
+</html>

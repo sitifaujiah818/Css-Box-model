@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Layout CSS Grid Responsive dengan Transisi</title>
+<style>
+  /* Style umum untuk body */
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f9f9f9;
+  }
+
+  /* Container utama menggunakan CSS Grid */
+  .container {
+    display: grid; /* Aktifkan CSS Grid */
+    grid-template-columns: 1fr 2fr 1fr; /* 3 kolom */
+    grid-template-rows: auto auto auto; /* Baris otomatis */
+    grid-template-areas: 
+      "header header header"
+      "menu main right"
+      "footer footer footer"; /* Area layout */
+    gap: 10px;
+    border: 5px solid dodgerblue;
+    padding: 10px;
+    transition: all 0.5s ease-in-out; /* Transisi saat layout berubah */
+  }
+
+  /* Style umum untuk setiap item */
+  .item {
+    background-color: lightblue;
+    border: 3px solid dodgerblue;
+    text-align: center;
+    padding: 20px;
+    font-size: 20px;
+    transition: all 0.4s ease; /* Transisi halus pada item */
+  }
+
+  /* Efek hover agar interaktif */
+  .item:hover {
+    background-color: deepskyblue;
+    color: white;
+    transform: scale(1.05);
+  }
+
+  /* Tentukan masing-masing area */
+  .header { grid-area: header; }
+  .menu   { grid-area: menu; }
+  .main   { grid-area: main; }
+  .right  { grid-area: right; }
+  .footer { grid-area: footer; }
+
+  /* === RESPONSIVE DESIGN === */
+  @media (max-width: 768px) {
+    .container {
+      grid-template-columns: 1fr; /* Semua jadi 1 kolom */
+      grid-template-areas: 
+        "header"
+        "menu"
+        "main"
+        "right"
+        "footer"; /* Susunan vertikal */
+    }
+  }
+</style>
+</head>
+<body>
+
+<h2>Layout CSS Grid Responsive dengan Transisi Animasi</h2>
+
+<!-- Container utama -->
+<div class="container">
+  <div class="item header">Header</div>
+  <div class="item menu">Menu</div>
+  <div class="item main">Main</div>
+  <div class="item right">Right</div>
+  <div class="item footer">Footer</div>
+</div>
+
+</body>
+</html>
